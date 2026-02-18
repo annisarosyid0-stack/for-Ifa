@@ -1,8 +1,9 @@
 import streamlit as st
-from streamlit_extras.let_it_rain import rain
+import time
 
 st.set_page_config(page_title="For Agip ✨", page_icon="✨", layout="centered")
 
+# Custom CSS aesthetic
 st.markdown("""
     <style>
     body {
@@ -21,29 +22,27 @@ st.markdown("""
     }
     .doa-box {
         background-color: #ede0d4;
-        padding: 20px;
+        padding: 25px;
         border-radius: 15px;
         font-size: 18px;
         color: #3a5a40;
         text-align: center;
+        line-height: 1.8;
     }
     </style>
 """, unsafe_allow_html=True)
 
 st.markdown('<p class="big-text">Barakallahu fii umrik, Agip ✨</p>', unsafe_allow_html=True)
-
 st.markdown('<p class="sub-text">Semoga Allah selalu melimpahkan keberkahan dalam setiap langkahmu.</p>', unsafe_allow_html=True)
 
 st.write("")
 st.write("")
 
 if st.button("🎁 Buka Hadiah"):
-    rain(
-        emoji="✨",
-        font_size=30,
-        falling_speed=5,
-        animation_length="infinite",
-    )
+    with st.spinner("Menyiapkan doa terbaik untukmu..."):
+        time.sleep(2)
+
+    st.success("✨ Doa Spesial Untuk Agip ✨")
 
     st.markdown("""
         <div class="doa-box">
@@ -56,3 +55,5 @@ if st.button("🎁 Buka Hadiah"):
         Semoga semua hal baik datang ke kamu, satu per satu.
         </div>
     """, unsafe_allow_html=True)
+
+    st.balloons()
